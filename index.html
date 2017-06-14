@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ye Olde Bookshoppe</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="styles/bookstore.css">
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet"> 
+    <script src="https://use.fontawesome.com/81140c216b.js"></script>
+   </head>
+  <body>
+    <header>
+      <nav><img src="images/bookshoppe.png" alt="BookShoppe Logo"> <a href="pages/shoppingcart.html">cart</a></nav>
+    </header>
+    <article>
+      <img src="images/storefront.jpg" alt="Storefront" width="600px" height="400px">
+      <h1>Welcome to Ye Olde Bookshoppe</h1>
+      <button id="viewBtn" type="button">View Books</button>
+      <div id="bookTableDiv"></div>
+    </article>
+    <footer>
+      <h4>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017, Andelin Enterprises</h4>
+    </footer>
+    <script id="bookTableTemplate" type="text/x-handlebars-template">
+      <table>
+        <thead>
+          <tr>
+            <th>Details</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody id="booksTbody">
+          {{#each books}}
+            <tr>
+              <td><a href="pages/bookdetails.html?id={{id}}">Details</a></td>
+              <td>{{title}}</td>
+              <td>{{author}}</td>
+              <td>{{price}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </script>
+    <script src="js/handlebars-v4.0.10.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bookstore.js"></script>
+  </body>
+</html>

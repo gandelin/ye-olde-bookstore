@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bookManager" class="org.csclass.mystore.managers.SimpleBookManager">
+		<property name="bookList">
+			<list>
+				<ref bean="book1" />
+				<ref bean="book2" />
+				<ref bean="book3" />
+				<ref bean="book4" />
+				<ref bean="book5" />
+				<ref bean="book6" />
+				<ref bean="book7" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="book1" class="org.csclass.mystore.beans.Book">
+		<property name="ISBN" value="978-0441569595" />
+		<property name="title" value="Neuromancer" />
+		<property name="description" value="Case had been the sharpest data-thief in the business, until vengeful former employees crippled his nervous system. But now a new and very mysterious employer recruits him for a last-chance run." />
+		<property name="author" value="William Gibson" />
+		<property name="genre" value="scifi" />
+		<property name="price" value="8.99" />
+		<property name="image" value="neuromancer.jpg" />
+	</bean>
+
+	<bean id="book2" class="org.csclass.mystore.beans.Book">
+		<property name="ISBN" value="978-0553293357" />
+		<property name="title" value="Foundation" />
+		<property name="description" value="For twelve thousand years the Galactic Empire has ruled supreme. Now it is dying. But only Hari Sheldon, creator of the revolutionary science of psychohistory, can see into the future--to a dark age of ignorance, barbarism, and warfare that will last thirty thousand years." />
+		<property name="author" value="Isaac Asimov" />
+		<property name="genre" value="scifi" />
+		<property name="price" value="14.50" />
+		<property name="image" value="foundation.jpg" />
+	</bean>
+
+	<bean id="book3" class="org.csclass.mystore.beans.Book">
+		<property name="ISBN" value="978-0553380163" />
+		<property name="title" value="A Brief History of Time" />
+		<property name="description" value="A landmark volume in science writing by one of the great minds of our time, Stephen Hawking’s book explores such profound questions as: How did the universe begin-and what made its start possible?" />
+		<property name="author" value="Stephen Hawking" />
+		<property name="genre" value="non-fiction" />
+		<property name="price" value="12.00" />
+		<property name="image" value="abriefhistoryoftime.jpg" />
+	</bean>
+	<bean id="book4" class="org.csclass.mystore.beans.Book">
+        <property name="ISBN" value="978-1503280786" />
+        <property name="title" value="Moby Dick" />
+        <property name="description" value="Ishmael narrates the monomaniacal quest of Ahab, captain of the whaler Pequod, for revenge on the albino sperm whale Moby Dick" />
+        <property name="author" value="Herman Melville" />
+        <property name="genre" value="classic" />
+        <property name="price" value="19.99" />
+		<property name="image" value="moby__dick.jpg" />
+	</bean>
+	<bean id="book5" class="org.csclass.mystore.beans.Book">
+        <property name="ISBN" value="978-0316769488" />
+        <property name="title" value="Catcher In The Rye" />
+        <property name="description" value="The novel's protagonist Holden Caulfield has become an icon for teenage rebellion. The novel also deals with complex issues of identity, belonging, loss, connection, and alienation." />
+        <property name="author" value="J. D. Salinger" />
+        <property name="genre" value="classic" />
+        <property name="price" value="6.49" />
+		<property name="image" value="catcherintherye.jpg" />
+	</bean>
+	<bean id="book6" class="org.csclass.mystore.beans.Book">
+        <property name="ISBN" value="978-0812550702" />
+        <property name="title" value="Ender's Game" />
+        <property name="description" value="Ender's Game presents an imperiled mankind after two conflicts with the buggers, an insectoid alien species. In preparation for an anticipated third invasion, children, including the novel's protagonist, Ender Wiggin, are trained from a very young age through increasingly difficult games including some in zero gravity, where Ender's tactical genius is revealed." />
+        <property name="author" value="Orson Scott Card" />
+        <property name="genre" value="sci-fi" />
+        <property name="price" value="8.20" />
+		<property name="image" value="endersgame.png" />
+	</bean>
+	<bean id="book7" class="org.csclass.mystore.beans.Book">
+        <property name="ISBN" value="978-0547928227" />
+        <property name="title" value="The Hobbit" />
+        <property name="description" value="The Hobbit follows the quest of home-loving hobbit Bilbo Baggins to win a share of the treasure guarded by the dragon, Smaug." />
+        <property name="author" value="JRR Tolkien" />
+        <property name="genre" value="fantasy" />
+        <property name="price" value="18.59" />
+		<property name="image" value="thehobbit.jpg" />
+	</bean>
+
+</beans>

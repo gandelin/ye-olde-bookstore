@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Book Details</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="../styles/bookstore.css">
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet"> 
+    <script src="https://use.fontawesome.com/81140c216b.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav><img src="../images/bookshoppe.png" alt="BookShoppe Logo"> <a href="../index.html">home</a> | <a href="../pages/shoppingcart.html">cart</a></nav>
+    </header>
+    <article>
+      <h1>Book Details</h1>
+      
+      <div id="bookDetailsTemplate"></div>
+    </article>
+    <footer>
+      <h4>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017, Andelin Enterprises</h4>
+    </footer>
+    <script type="text/x-handlebars-template">
+      <img src="../images/{{book.image}}">
+      <h3>Title: </h3><span>{{book.title}}</span>
+      <h3>Genre: </h3><span>{{book.genre}}</span>
+      <h3>Price: </h3><span>{{book.price}}</span>
+      <h3>Description: </h3><span>{{book.description}}</span>
+    </script>
+    <script src="../js/handlebars-v4.0.10.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bookdetails.js"></script>
+  </body>
+</html>

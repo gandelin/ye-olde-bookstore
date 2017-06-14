@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="yyyy-MM-dd" />
+	</bean>
+
+	<bean id="accountManager" class="org.csclass.mystore.managers.SimpleAccountManager">
+		<property name="accounts">
+			<list>
+				<ref bean="account1" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="account1" class="org.csclass.mystore.beans.Account">
+		<property name="userInfo" ref="userInfo1" />
+		<property name="mailingAddressMap">
+			<map>
+				<entry key="1" value-ref="address1" />
+				<entry key="2" value-ref="address2" />
+			</map>
+		</property>
+		<property name="creditCardMap">
+			<map>
+				<entry key="1" value-ref="card1" />
+				<entry key="2" value-ref="card2" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="userInfo1" class="org.csclass.mystore.beans.UserInfo">
+		<property name="name" value="andelin" />
+		<property name="password" value="1Password" />
+		<property name="email" value="gary@gmail.com" />
+		<property name="phone" value="360-444-5566" />
+	</bean>
+
+	<bean id="address1" class="org.csclass.mystore.beans.Address">
+		<property name="name" value="Gary Andelin	" />
+		<property name="addressLine1" value="123 Maple" />
+		<property name="addressLine2" value="" />
+		<property name="city" value="Georgetown" />
+		<property name="state" value="WA" />
+		<property name="zipcode" value="98123" />
+	</bean>
+
+	<bean id="address2" class="org.csclass.mystore.beans.Address">
+		<property name="name" value="Gary Resort" />
+		<property name="addressLine1" value="1315 Summer Place" />
+		<property name="addressLine2" value="Suite #2" />
+		<property name="city" value="Snoqualimie" />
+		<property name="state" value="WA" />
+		<property name="zipcode" value="98321" />
+	</bean>
+
+	<bean id="card1" class="org.csclass.mystore.beans.CreditCard">
+		<property name="nameOnCard" value="Gary" />
+		<property name="number" value="1234567890123456" />
+		<property name="expirationDate">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="2015-10-31" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="card2" class="org.csclass.mystore.beans.CreditCard">
+		<property name="nameOnCard" value="Fred Meyer" />
+		<property name="number" value="1112223334445556" />
+		<property name="expirationDate">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="2016-12-31" />
+			</bean>
+		</property>
+	</bean>
+
+</beans>
+		
