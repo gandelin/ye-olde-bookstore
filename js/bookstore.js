@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-
+var BOOKS_PERSISTENCE_KEY = 'bookstorage';  
 var books = 
       [
         { "id": 0,
@@ -72,6 +72,8 @@ var books =
   var bookTableTemplate = Handlebars.compile($('#bookTableTemplate').html());
   
   $('#viewBtn').on('click', displayBookTable);
+
+  saveBooks();
   
   function displayBookTable() {
     var data = {
@@ -79,6 +81,10 @@ var books =
     }
     var html = bookTableTemplate(data);
     $('#bookTableDiv').html(html);
+  }
+  
+  function saveBooks() {
+    localStorage[BOOKS_PERSISTENCE_KEY] = JSON.stringify(books);
   }
   
 })();

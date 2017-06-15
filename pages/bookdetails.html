@@ -14,12 +14,12 @@
     <article>
       <h1>Book Details</h1>
       
-      <div id="bookDetailsTemplate"></div>
+      <div id="bookDetails"></div>
     </article>
     <footer>
       <h4>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017, Andelin Enterprises</h4>
     </footer>
-    <script type="text/x-handlebars-template">
+    <script id="bookDetailsTemplate" type="text/x-handlebars-template">
       <img src="../images/{{book.image}}">
       <h3>Title: </h3><span>{{book.title}}</span>
       <h3>Genre: </h3><span>{{book.genre}}</span>

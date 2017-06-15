@@ -14,9 +14,11 @@
     <article>
       <img src="images/storefront.jpg" alt="Storefront" width="600px" height="400px">
       <h1>Welcome to Ye Olde Bookshoppe</h1>
+    </article>
+    <aside>
       <button id="viewBtn" type="button">View Books</button>
       <div id="bookTableDiv"></div>
-    </article>
+    </aside>
     <footer>
       <h4>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017, Andelin Enterprises</h4>
     </footer>
@@ -33,7 +35,7 @@
         <tbody id="booksTbody">
           {{#each books}}
             <tr>
-              <td><a href="pages/bookdetails.html?id={{id}}">Details</a></td>
+              <td><a class=".link" href="pages/bookdetails.html?id={{id}}">Details</a></td>
               <td>{{title}}</td>
               <td>{{author}}</td>
               <td>{{price}}</td>
