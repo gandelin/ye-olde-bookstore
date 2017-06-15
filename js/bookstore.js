@@ -71,11 +71,9 @@ var books =
   
   var bookTableTemplate = Handlebars.compile($('#bookTableTemplate').html());
   
-  $('#viewBtn').on('click', displayBookTable);
-
   saveBooks();
   
-  function displayBookTable() {
+  window.onload = function displayBookTable() {
     var data = {
       books : books
     }

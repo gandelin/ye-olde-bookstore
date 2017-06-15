@@ -17,14 +17,15 @@
       <div id="bookDetails"></div>
     </article>
     <footer>
-      <h4>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017, Andelin Enterprises</h4>
+      <h6>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017, Ye Olde Booksellers, Inc. 4322 Reading Avenue, Butte, Montana 59701</h6>
     </footer>
     <script id="bookDetailsTemplate" type="text/x-handlebars-template">
-      <img src="../images/{{book.image}}">
-      <h3>Title: </h3><span>{{book.title}}</span>
-      <h3>Genre: </h3><span>{{book.genre}}</span>
-      <h3>Price: </h3><span>{{book.price}}</span>
-      <h3>Description: </h3><span>{{book.description}}</span>
+      <img src="../images/{{book.image}}" alt="{{book.title}}" width="200px" height="300px">
+      <h4>Title: </h4><span>{{book.title}}</span>
+      <h4>Author: </h4><span>{{book.author}}</span>
+      <h4>Description: </h4><span>{{book.description}}</span>
+      <h4>Genre: </h4><span>{{book.genre}}</span>
+      <h4>Price: </h4><span>{{book.price}}</span>
     </script>
     <script src="../js/handlebars-v4.0.10.js"></script>
     <script src="../js/jquery-3.2.1.min.js"></script>
