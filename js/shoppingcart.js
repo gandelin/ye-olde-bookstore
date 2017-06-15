@@ -41,10 +41,10 @@
       order.title = origOrder.title;
       order.price = parseFloat(origOrder.price);
       order.quantity = parseInt(origOrder.quantity);
-      order.totalPrice = orderPrice;
+      order.totalPrice = parseFloat(origOrder.totalPrice);
       myCart.orders.push(order);
     }
-    myCart.orderPrice = orderPrice;
+    myCart.orderPrice = orderPrice.toFixed(2);
     myCart.tax = parseFloat((0.09 * orderPrice).toFixed(2));
     myCart.shipping = 5.0;
     myCart.totalPrice = (orderPrice + myCart.tax + myCart.shipping).toFixed(2);

@@ -37,8 +37,15 @@ function getBooks() {
   
 function addBookToCart(evt) {
   evt.preventDefault();
-  var order = new Order(selectedBook);
-  cart.orders.push(order);
+  var order = searchCart(selectedBook.title);
+  if (order) {
+    order.quantity++;
+    order.totalPrice = (parseFloat(order.price) * order.quantity).toFixed(2);
+  }
+  else {
+    order = new Order(selectedBook);
+    cart.orders.push(order);
+  }
   saveCart(cart);
 }
 
@@ -75,5 +82,15 @@ function Cart() {
   this.shipping = 0;
   this.totalPrice = 0;
 }
-  
+
+  function searchCart(title) {
+    var order;
+    for (var ix = 0; ix < cart.orders.length; ix++) {
+      if (title == cart.orders[ix].title) {
+        order = cart.orders[ix];
+        break;
+      }
+    }
+    return order;
+  }
 })();
