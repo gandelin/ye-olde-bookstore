@@ -24,7 +24,7 @@
   function getCart() {
     var c = localStorage[CART_PERSISTENCE_KEY];
     var myCart = new Cart();
-    if (c !== "undefined" || c !== undefined) {
+    if (c !== "undefined" && c !== undefined) {
       myCart = JSON.parse(c);
     }
     return updateOrderTotals(myCart);
