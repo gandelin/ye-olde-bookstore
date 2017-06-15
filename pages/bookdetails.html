@@ -20,12 +20,19 @@
       <h6>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017, Ye Olde Booksellers, Inc. 4322 Reading Avenue, Butte, Montana 59701</h6>
     </footer>
     <script id="bookDetailsTemplate" type="text/x-handlebars-template">
-      <img src="../images/{{book.image}}" alt="{{book.title}}" width="200px" height="300px">
-      <h4>Title: </h4><span>{{book.title}}</span>
-      <h4>Author: </h4><span>{{book.author}}</span>
-      <h4>Description: </h4><span>{{book.description}}</span>
-      <h4>Genre: </h4><span>{{book.genre}}</span>
-      <h4>Price: </h4><span>{{book.price}}</span>
+      <ul>
+        <li><img src="../images/{{book.image}}" alt="{{book.title}}" width="200px" height="300px"></li>
+        <li><h4 class="details">Title: </h4><span>{{book.title}}</span></li>
+        <li><h4 class="details">Author: </h4><span>{{book.author}}</span></li>
+        <li><h4 class="details">Description: </h4><span>{{book.description}}</span></li>
+        <li><h4 class="details">Genre: </h4><span>{{book.genre}}</span></li>
+        <li><h4 class="details">Price: </h4><span>{{book.price}}</span></li>
+      </ul>
+      <button id="addToCart" type="button">Add to Cart</button>
+      <form action="../index.html">
+        <input type="submit" value="Back">
+      </form>
+
     </script>
     <script src="../js/handlebars-v4.0.10.js"></script>
     <script src="../js/jquery-3.2.1.min.js"></script>

@@ -12,7 +12,15 @@
     </header>
     <article>
       <h1>Shopping Cart</h1>
-      
+      <div id="shoppingCartDiv"></div>
+      <form action="../index.html">
+        <input type="submit" value="Back">
+      </form>
+    </article>
+    <footer>
+      <h6>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017, Ye Olde Booksellers, Inc. 4322 Reading Avenue, Butte, Montana 59701</h6>
+    </footer>
+    <script id="shoppingCartTemplate" type="text/x-handlebars-template">
       <table>
         <thead>
           <th>Remove</th>
@@ -22,94 +30,59 @@
           <th>Total</th>
         </thead>
         <tbody>
-          <form>
-            {{#each: bookOrders}}
+          <form method="post" action="../index.html">
+            {{#each cart.orders}}
               <tr>
+                <td><a href="#">Remove</a></td>
+                <td>{{title}}</td>
+                <td>{{price}}</td>
+                <td>{{quantity}}</td>
+                <td>{{totalPrice}}</td>
               </tr>
             {{/each}}
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Order Price: {{cart.orderPrice}}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Tax: {{cart.tax}}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Shipping: {{cart.shipping}}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>Total Price: {{cart.totalPrice}}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <input id="placeOrder" type="submit" value="Place Order">
+              </td>
+            </tr>
           </form>
         </tbody>
       </table>
-    </article>
-    <footer>
-      <h6>Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017, Ye Olde Booksellers, Inc. 4322 Reading Avenue, Butte, Montana 59701</h6>
-    </footer>
-    <script>
-      <table>
     </script>
-    <script src="js/handlebars-v4.0.10.js"></script>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bookstore.js"></script>
+    <script src="../js/handlebars-v4.0.10.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/shoppingcart.js"></script>
   </body>
 </html>
-
-
-			<table border="1" width="100%">
-				<thead>
-					<tr>
-						<th><fmt:message key="deleteText" /></th>
-						<th><fmt:message key="titleText" /></th>
-						<th><fmt:message key="priceText" /></th>
-						<th><fmt:message key="quantityText" /></th>
-						<th><fmt:message key="totalPriceText" /></th>
-					</tr>
-				</thead>
-				<tbody>
-					<form:form method="POST" modelAttribute="shoppingCart"
-						action="/mystore/cart/update">
-						<c:forEach var="bookOrderMap" items="${shoppingCart.bookOrderMap}">
-							<tr>
-								<td><a
-									href="<c:url value="/cart/${bookOrderMap.value.ISBN}/delete"/>">Delete
-										Book</a></td>
-								<td><c:out value="${bookOrderMap.value.title}" /></td>
-								<td><fmt:formatNumber value="${bookOrderMap.value.price }"
-										type="currency" /></td>
-
-								<td><form:input
-										path="bookOrderMap['${bookOrderMap.key}'].quantity"
-										value="${bookOrderMap.value.quantity}" /> <form:hidden
-										path="bookOrderMap['${bookOrderMap.key}'].ISBN" /> <input
-									type="submit" value="Update Quantity" /></td>
-								<td style="text-align: right"><fmt:formatNumber
-										value="${bookOrderMap.value.orderPrice}" type="currency" /></td>
-							</tr>
-						</c:forEach>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td style="text-align: right"><form:label path="orderPrice">Order Price: </form:label>
-								<fmt:formatNumber value="${shoppingCart.orderPrice}"
-									type="currency" /></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td style="text-align: right"><form:label path="tax">Tax: </form:label>
-								<fmt:formatNumber value="${shoppingCart.tax}" type="currency" /></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td style="text-align: right"><form:label path="shipping">Shipping: </form:label>
-								<fmt:formatNumber value="${shoppingCart.shipping}"
-									type="currency" /></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td style="text-align: right"><form:label path="totalPrice">Total Price: </form:label>
-								<fmt:formatNumber value="${shoppingCart.totalPrice}"
-									type="currency" /></td>
-						</tr>
-					</form:form>
-				</tbody>
-			</table>

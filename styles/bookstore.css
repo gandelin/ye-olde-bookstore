@@ -6,3 +6,18 @@ table, th, td {
   border: 1px solid black;
 }
 
+.details {
+  display: inline;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 1em 0;
+}
+
+form {
+  display: inline;
+}
