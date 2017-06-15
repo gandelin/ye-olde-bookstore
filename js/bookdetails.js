@@ -52,7 +52,7 @@ function addBookToCart(evt) {
 function getCart() {
   var c = localStorage[CART_PERSISTENCE_KEY];
   
-  if (c !== "undefined") {
+  if (c !== "undefined" || c !== undefined) {
     return JSON.parse(c);
   }
   else {
